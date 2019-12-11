@@ -1,0 +1,14 @@
+@import "../../sass/mixins";
+
+.about__wrap {
+  @include wrapSettings;
+
+  .about__box {
+    @include boxDisplaySettings;
+    .about__box__form{
+
+
+    }
+
+  }}
+

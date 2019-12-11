@@ -1,0 +1,88 @@
+@import "../../sass/mixins";
+
+
+.about__wrap {
+  @include wrapSettings;
+
+  .about__box {
+    @include boxDisplaySettings;
+
+
+    .about__box__article {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid red;
+      padding-left: 2.5rem;
+      padding-right: 1.5rem;
+
+      h1 {
+        font-family: 'muliextrabold', sans-serif;
+        font-size: 2.1rem;
+        margin-bottom: 3rem;
+      }
+
+      p {
+        font-family: 'mulilight', sans-serif;
+        font-size: 1.1rem;
+        line-height: 2rem;
+        color: #5C5C5C;
+        margin-bottom: 2.5rem;
+
+        }
+
+    }
+    .about__box__media {
+      height: 100%;
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      border: 1px solid green;
+
+      .about__box__media--photo{
+        width: 80%;
+        height: 32.25rem;
+      }
+
+      .about__box__media--photo {
+
+        &::before {
+          content: "";
+          text-align: center;
+          color: white;
+          width: 30.625rem;
+          height: 32.25rem;
+          position: absolute;
+          z-index: 1;
+     @include newBackgroundColor
+
+        }
+
+        span {
+          font-family: 'mulilight', sans-serif;
+          font-weight: bold;
+          font-size: 1.5rem;
+          color: white;
+          margin: 1.9rem -3rem 0rem;
+          padding: 0 3rem 0 3rem;
+          position: absolute;
+          transform: rotate(-47deg);
+          z-index: 2;
+        }
+
+
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        @include imgShadowSettings;
+
+      }
+
+
+    }
+  }
+}

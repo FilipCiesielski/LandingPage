@@ -1,0 +1,48 @@
+@import "../../sass/mixins.scss";
+
+
+.navBar__wrap{
+  width: 100vw;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 3;
+@include navBarShadowSettings;
+
+.navBar__box{
+  align-items: center;
+  @include boxDisplaySettings;
+
+  .navBar__box__logo {
+    width:70%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+img{
+  width: 16%;
+  height: 16%;
+  margin-left: 2.5rem;
+}
+
+  }
+.navBar__box__menu {
+
+width: 100%;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+ padding-right: 1rem;
+
+
+  li a {
+    text-decoration: none;
+    color:white;
+    font-family: 'mulibold', sans-serif;
+    &:hover{
+color:red;
+    }
+
+}
+}}
+}
