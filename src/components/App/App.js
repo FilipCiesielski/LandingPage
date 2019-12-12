@@ -5,6 +5,7 @@ import Header from "../Header/Header";
 import AboutForWho from "../AboutForWho/AboutForWho";
 import AboutForWhat from "../AboutForWhat/AboutForWhat";
 import AboutWithWho from "../AboutWithWho/AboutWithWho";
+import Contact from "../Contact/Contact";
 
 
 
@@ -17,6 +18,7 @@ class App extends Component {
        <AboutForWho/>
        <AboutForWhat/>
        <AboutWithWho/>
+       <Contact/>
 
        </>
     )

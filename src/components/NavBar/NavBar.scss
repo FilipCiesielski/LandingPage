@@ -8,7 +8,8 @@
   justify-content: center;
   position: fixed;
   z-index: 3;
-@include navBarShadowSettings;
+@include navBarBackgroundSettings;
+  @include shadowDownSettings;
 
 .navBar__box{
   align-items: center;
