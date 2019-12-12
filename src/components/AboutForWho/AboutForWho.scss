@@ -1,4 +1,5 @@
 @import "../../sass/mixins";
+@import "../../sass/colors";
 
 
 .about__wrap {
@@ -26,7 +27,7 @@
         font-family: 'mulilight', sans-serif;
         font-size: 1.1rem;
         line-height: 2rem;
-        color: #5C5C5C;
+        color: $darkGrey;
         margin-bottom: 2.5rem;
 
         &:nth-of-type(3) {
@@ -38,14 +39,14 @@
         }
 a{
   text-decoration: none;
-  color: #4D9EEA;
+  color: $blueColor;
 }
       }
 
       .fontAwesome {
         margin-right: 1rem;
         font-weight: lighter;
-        color: #4D9EEA;
+        color: $blueColor;
 
       }
     }
