@@ -6,26 +6,38 @@ class Contact extends Component {
     constructor(props) {
         super(props);
 
-       this.state = {
-            nameInput: "",
-            surnameInput: "",
-            emailInput: "",
-            messageInput: "",
+        this.state = {
+            name: "",
+            surname: "",
+            email: "",
+            message: "",
+
+            colorName: "black",
+            colorSurname: "black",
+            colorEmail: "black",
+            colorMessage: "black",
+
+            borderName: "none",
+            borderSurname: "none",
+            borderEmail: "none",
+            borderMessage: "none",
+
             checkBox: false,
-            formSend: false,
-            errName: false,
-            errSurname: false,
-            errEmail: false,
+            errName:false,
+            errSurname:false,
+            errEmail:false,
+            errMessage:false,
+            errCheckBox:false,
 
         };
-        this.myRef = React.createRef();
 
     }
 
+
     handleOnChange = e => {
         this.setState({
-            [e.target.name]: e.target.value })
-        console.log(this.myRef.current.style.color="red")
+            [e.target.name]: e.target.value
+        })
 
 
     };
@@ -37,18 +49,42 @@ class Contact extends Component {
     };
 
     handleOnSubmit = e => {
+
         this.setState({
-            formSend: false, errName: false, errSurname: false, errEmail: false, errMessage: false
+            formSend: false, errName: false, errEmail: false, errMessage: false,errCheckBox:false
         });
 
-        const mailReg = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$/i;
 
-        let {nameInput, surnameInput, emailInput, checkBox,formSend} = this.state;
-
+        let {name, surname, email, checkBox, message, formSend} = this.state;
+        const mail = email;
+        const mailReg = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$/i
 
         e.preventDefault();
-        if(nameInput!==""&& nameInput.length>1 && nameInput!==""&& nameInput.length>1 && mailReg.test(emailInput) && checkBox  ) {
-            this.setState({formSend: true})
+        if (name !== "" && name.length > 1 && name.length < 50 && surname !== "" && surname.length > 2 && surname.length < 50 && mailReg.test(mail) &&  message.length > 0 && checkBox) {
+            this.setState({formSend:true})
+
+
+
+        } else {
+            if (name === "" || name.length < 1 || name.length > 50) {
+                this.setState({errName:true})
+              if(this.state.errName) {
+                  this.setState({borderName: "1px solid red", colorName: "red"})
+              }
+            }
+        }
+        if (surname === "" || surname.length < 2 || surname.length > 50) {
+            this.setState({borderSurname: "1px solid red", colorSurname: "red"})
+        }
+        if (!mailReg.test(mail)) {
+            this.setState({borderEmail:"1px solid red", colorEmail: "red"})
+        }
+        if (message.length < 1) {
+            this.setState({borderMessage:"1px solid red", colorMessage: "red"})
+        }
+        if (!checkBox) {
+            this.setState({borderCheckBox: "1px solid red"})
+
         }
 
 
@@ -82,33 +118,51 @@ class Contact extends Component {
                         <span>Skorzystaj z formularza.</span>
                         <form onSubmit={this.handleOnSubmit}>
                             <div className={"form__inputs"}>
-                                <div>
-                                    <input type="name" name="nameInput" ref={this.myRef} required=" " value={this.state.nameInput}
+
+                                <div className="floating-label" style={{border: this.state.borderName}}>
+                                    <input className="floating-input" placeholder=" " type="name" name="name"
+                                           style={{color: this.state.colorName}}
+                                           value={this.state.name}
                                            onChange={this.handleOnChange}/>
+
                                     <label>Imię</label>
                                 </div>
-                                <div>
-                                    <input type="name" name="surnameInput"  required=" "  value={this.state.surnameInput}
+
+                                <div className="floating-label" style={{border: this.state.borderSurname}}>
+                                    <input className="floating-input"
+                                           placeholder=" " type="name" name="surname"
+                                           style={{color: this.state.colorSurname}}
+                                           value={this.state.surname}
                                            onChange={this.handleOnChange}/>
+
                                     <label>Nazwisko</label>
                                 </div>
+
+
                             </div>
                             <div className={"form__inputs"}>
-                                <div>
-                                    <input type="email"  name="emailInput" required=" " value={this.state.emailInput}
+
+                                <div className="floating-label" style={{border: this.state.borderEmail}}>
+                                    <input className="floating-input" placeholder=" " type="text"
+                                           name="email" style={{color: this.state.colorEmail}} value={this.state.email}
                                            onChange={this.handleOnChange}/>
                                     <label>Adres e-mail</label>
                                 </div>
 
-                                <div>
-                                    <textarea name="messageInput" required=" "  maxLength="2000" value={this.state.messageInput}
+                                <div className="floating-label" style={{border: this.state.borderMessage}}>
+                                    <textarea className="floating-input floating-textarea" placeholder=" "
+                                              name="message" style={{color: this.state.colorMessage}}
+                                              value={this.state.message}
                                               onChange={this.handleOnChange}/>
+
                                     <label>Treść Wiadomośći</label>
                                 </div>
+
+
                             </div>
 
-                            <div className={"contact__box__checkBox"}>
-                                <div className="custom__checkbox">
+                            <div className={"contact__box__checkBox"} style={{border:this.state.borderCheckBox}}>
+                                <div className="custom__checkbox" >
                                     <input type="checkbox" name="check" value="None" id="custom__checkbox"
                                            onChange={this.handleChangeBox}/>
 

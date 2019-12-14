@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import "../AboutForWho/AboutForWho.scss"
+import {Waypoint} from 'react-waypoint';
 
 
 class AboutWithWho extends Component {
@@ -20,6 +21,9 @@ class AboutWithWho extends Component {
                     </div>
                     <div className={"about__box__media"}>
                         <div className={"about__box__media--clip"}>
+                            {/*<iframe id="ytplayer" type="text/html" height="480" width="470"*/}
+                            {/*        src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"*/}
+                            {/*        frameBorder="0"></iframe>*/}
                         </div>
                     </div>
                      </section>
