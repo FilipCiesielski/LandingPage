@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import logo from "../../assets/Logo.png"
+import logo from "../../assets/logo__eagle.png"
 import './NavBar.scss';
 
 
@@ -9,7 +9,7 @@ class NavBar extends Component {
             <div className={"navBar__wrap"}>
                 <nav className={"navBar__box"}>
                     <div className={"navBar__box__logo"}>
-                        <img src={logo} alt={"logo orzeł"}></img>
+                        <img src={logo} alt={"logo eagle"}></img>
                     </div>
                     <div className={"navBar__box__menu"}>
                         <li><a href="">I stopnia</a></li>

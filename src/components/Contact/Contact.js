@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import './Contact.scss';
-
+var request = require('ajax-request');
 
 class Contact extends Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
+
+        state = {
             name: "",
             surname: "",
             email: "",
@@ -23,15 +22,11 @@ class Contact extends Component {
             borderMessage: "none",
 
             checkBox: false,
-            errName: false,
-            errSurname: false,
-            errEmail: false,
-            errMessage: false,
             errCheckBox: false,
-
+            formSend:false,
+clickEffect:"null"
         };
 
-    }
 
 
     handleOnChange = e => {
@@ -39,108 +34,117 @@ class Contact extends Component {
             [e.target.name]: e.target.value
         }, this.validationForm(e.target.name));
 
-        console.log(e.target.name)
     };
 
     validationForm = (inputName) => {
 
-        let {name, surname, email, checkBox, message} = this.state;
+        let {name, surname, email, message} = this.state;
         const mail = email;
-        const mailReg = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$/i;
+        const mailReg = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{1,3}$/i;
 
         if (inputName === "name" && name === "" && name.length < 2) {
             this.setState({borderName: "1px solid red", colorName: "red"});
 
-        } else {
+        } else if(inputName==="name") {
             this.setState({borderName: "none", colorName: "black"})
         }
         if (inputName === "surname" && surname === "" && surname.length < 2) {
             this.setState({borderSurname: "1px solid red", colorSurname: "red"})
-        } else {
+        }  else if(inputName==="surname"){
             this.setState({borderSurname: "none", colorSurname: "black"})
         }
         if (inputName === "email" && !mailReg.test(mail)) {
             this.setState({borderEmail: "1px solid red", colorEmail: "red"})
-            console.log("dramat")
-        } else {
+
+        }  else if(inputName==="email") {
             this.setState({borderEmail: "none", colorEmail: "black"});
         }
         if (inputName === "message" && message === "" && message.length < 1) {
             this.setState({borderMessage: "1px solid red", colorMessage: "red"})
-        } else {
+        }  else if(inputName==="message") {
             this.setState({borderMessage: "none", colorMessage: "black"})
         }
-        if (!checkBox) {
-            this.setState({borderCheckBox: "1px solid red"})
 
-        } else {
-            this.setState({borderCheckBox: "none"})
-        }
-    }
+    };
 
 
-    handleChangeBox = e => {
+    handleChangeBox = () => {
         this.setState({checkBox: !this.state.checkBox});
 
     };
 
     handleOnSubmit = e => {
 
+        this.setState({clickEffect: "pressButton"})
         this.setState({formSend: false});
-        this.validationForm()
+        console.log(this.state.checkBox)
+        this.validationForm();
 
-        let {name, surname, email, checkBox, message, } = this.state;
+        let {name, surname, email, checkBox, message,} = this.state;
         const mail = email;
-        const mailReg = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$/i
+        const mailReg = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{1,3}$/i;
 
         e.preventDefault();
+        const axios = require('axios');
+
+        async function makePostRequest() {
+
+            let res = await axios.post('https://jsonplaceholder.typicode.com/posts');
+
+            console.log(`Status code: ${res.status}`);
+            console.log(`Status text: ${res.statusText}`);
+            console.log(`Request method: ${res.request.method}`);
+            console.log(`Path: ${res.request.path}`);
+
+            console.log(`Date: ${res.headers.date}`);
+            console.log(`Data: ${res.data}`);
+        }
+
+        var values = this.serialize();
+
+       request.post({
+            url: "test.php",
+            type: "post",
+            data: values ,
+            success: function (response) {
+
+                // You will get response from your PHP page (what you echo or print)
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }
+        });
+
+
+
+
 
         if (name !== "" && name.length > 2 && name.length < 50 && surname !== "" && surname.length > 2 && surname.length < 50 && mailReg.test(mail) && message.length > 0 && checkBox) {
-            this.setState({formSend: true})
-            console.log("ok")
+            this.setState({formSend: true});
+            makePostRequest()
         } else {
-            if (name.length < 2) {
-                this.setState({borderName: "1px solid red", colorName: "red"});
-            }
-            if (surname.length < 2) {
-                this.setState({borderSurname: "1px solid red", colorSurname: "red"})
-            }
-            if (!mailReg.test(mail)) {
-                this.setState({borderEmail: "1px solid red", colorEmail: "red"});
-                console.log("dramat")
-            }
-            if (message.length < 2) {
-                this.setState({borderMessage: "1px solid red", colorMessage: "red"})
-            }
             if (!checkBox) {
                 this.setState({borderCheckBox: "1px solid red"})
-
-
             }
+        }
 
+        if (name === "" && name.length < 2) {
+            this.setState({borderName: "1px solid red", colorName: "red"});
 
+        }
+        if (surname === "" && surname.length < 2) {
+            this.setState({borderSurname: "1px solid red", colorSurname: "red"})
+        }
+        if (!mailReg.test(mail)) {
+            this.setState({borderEmail: "1px solid red", colorEmail: "red"})
+
+        }
+        if (message === "" && message.length < 1) {
+            this.setState({borderMessage: "1px solid red", colorMessage: "red"})
         }
 
 
-// const url = "https://fer-api.coderslab.pl/v1/portfolio/contact";
-//
-// fetch(url, {
-//     method: 'POST',
-//     headers: {
-//         "Content-Type": "application/json"
-//     },
-//     body: JSON.stringify({
-//         name, email, message
-//     })
-// })
-//     .then(function (data) {
-//         console.log(data);
-//     })
-//     .catch(function (error) {
-//     });
-
     }
-
     render() {
         return (
             <div className={"contact__wrap"}>
@@ -211,7 +215,7 @@ class Contact extends Component {
                                     uchylenia
                                     dyrektywy 95/46/WE (RODO).</p>
                             </div>
-                            <input className={"submit"} type={"submit"} value={"wyślij"}/>
+                            <input className={this.state.clickEffect} type={"submit"} value={"wyślij"}/>
                         </form>
                     </div>
                 </section>

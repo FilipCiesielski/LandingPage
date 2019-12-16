@@ -1,57 +1,55 @@
 @import "../../sass/mixins";
 
 
-.about__wrap {
+.about1__wrap {
   @include wrapSettings;
 
-  .about__box {
+  .about1__box {
     @include boxDisplaySettings;
 
 
-    .about__box__article {
+    .about1__box__article {
       width: 100%;
       display: flex;
       flex-direction: column;
-      border: 1px solid red;
-      padding-left: 2.5rem;
-      padding-right: 1.5rem;
+      padding: 0 1.5vw 0 2.5vw ;
+
 
       h1 {
         font-family: 'muliextrabold', sans-serif;
-        font-size: 2.1rem;
-        margin-bottom: 3rem;
+        font-size: 2.1vw;
+        margin-bottom: 3vw;
       }
 
       p {
         font-family: 'mulilight', sans-serif;
-        font-size: 1.1rem;
-        line-height: 2rem;
+        font-size: 1.1vw;
+        line-height: 2vw;
         color: #5C5C5C;
-        margin-bottom: 2.5rem;
-
+        margin-bottom: 2.5vw;
         }
 
     }
-    .about__box__media {
+    .about1__box__media {
       height: 100%;
       width: 90%;
       display: flex;
       justify-content: center;
       border: 1px solid green;
 
-      .about__box__media--photo{
+      .about1__box__media--photo{
         width: 80%;
-        height: 32.25rem;
+        height: 32.25vw;
       }
 
-      .about__box__media--photo {
+      .about1__box__media--photo {
 
         &::before {
           content: "";
           text-align: center;
           color: white;
-          width: 30.625rem;
-          height: 32.25rem;
+          width: 30.625vw;
+          height: 32.25vw;
           position: absolute;
           z-index: 1;
      @include newBackgroundColor
@@ -61,10 +59,10 @@
         span {
           font-family: 'mulilight', sans-serif;
           font-weight: bold;
-          font-size: 1.5rem;
+          font-size: 1.5vw;
           color: white;
-          margin: 1.9rem -3rem 0rem;
-          padding: 0 3rem 0 3rem;
+          margin: 1.9vw -3vw 0vw;
+          padding: 0 3vw 0 3vw;
           position: absolute;
           transform: rotate(-47deg);
           z-index: 2;

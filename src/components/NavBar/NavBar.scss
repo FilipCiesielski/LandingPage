@@ -1,13 +1,13 @@
 @import "../../sass/mixins.scss";
-
+@import "../../sass/colors";
 
 .navBar__wrap{
   width: 100vw;
-  height: 10%;
+  height: 5vw;
   display: flex;
   justify-content: center;
   position: fixed;
-  z-index: 3;
+  z-index: 4;
 @include navBarBackgroundSettings;
   @include shadowDownSettings;
 
@@ -16,34 +16,51 @@
   @include boxDisplaySettings;
 
   .navBar__box__logo {
+
     width:70%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 img{
-  width: 16%;
-  height: 16%;
-  margin-left: 2.5rem;
+  width: 15%;
+  height: 15%;
+  margin-left: 2.5vw;
+
 }
 
   }
 .navBar__box__menu {
 
-width: 100%;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   list-style-type: none;
- padding-right: 1rem;
+  padding-right: 1vw;
 
+   a {
 
-  li a {
     text-decoration: none;
     color:white;
     font-family: 'mulibold', sans-serif;
-    &:hover{
-color:red;
-    }
+&:hover{
+color: silver;
+}
+     &:after {
+       margin-top: 5px;
+       display:block;
+       content: '';
+       border-bottom:1px solid silver;
+       transform: scaleX(0);
+       transition: transform 0.4s ease-in-out;
+
+     }
+        &:hover:after{
+
+   transform: scaleX(1);
+}
+
+
+  }
 
 }
 }}
-}

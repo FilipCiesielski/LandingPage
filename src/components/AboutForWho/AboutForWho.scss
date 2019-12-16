@@ -2,40 +2,40 @@
 @import "../../sass/colors";
 
 
-.about__wrap {
+.about2__wrap {
   @include wrapSettings;
 
-  .about__box {
+  .about2__box {
     @include boxDisplaySettings;
 
 
-    .about__box__article {
+    .about2__box__article {
       width: 100%;
       display: flex;
       flex-direction: column;
       border: 1px solid red;
-      padding-left: 2.5rem;
-      padding-right: 1.5rem;
+      padding-left: 2.5vw;
+      padding-right: 1.5vw;
 
       h1 {
         font-family: 'muliextrabold', sans-serif;
-        font-size: 2.1rem;
-        margin-bottom: 3rem;
+        font-size: 2.1vw;
+        margin-bottom: 3vw;
       }
 
       p {
         font-family: 'mulilight', sans-serif;
-        font-size: 1.1rem;
-        line-height: 2rem;
+        font-size: 1.1vw;
+        line-height: 2vw;
         color: $darkGrey;
-        margin-bottom: 2.5rem;
+        margin-bottom: 2.5vw;
 
         &:nth-of-type(3) {
-          margin: 2rem 0 1rem 0;
+          margin: 2vw 0 1vw 0;
         }
 
         &:nth-of-type(4) {
-          margin-bottom: 1rem;
+          margin-bottom: 1vw;
         }
 a{
   text-decoration: none;
@@ -44,22 +44,22 @@ a{
       }
 
       .fontAwesome {
-        margin-right: 1rem;
+        margin-right: 1vw;
         font-weight: lighter;
         color: $blueColor;
 
       }
     }
-    .about__box__media {
+    .about2__box__media {
       height: 100%;
       width: 90%;
       display: flex;
       justify-content: center;
       border: 1px solid green;
 
-      .about__box__media--image,{
+      .about2__box__media--image,{
         width: 82%;
-        height: 32.25rem;
+        height: 32.25vw;
       }
 
       img {
