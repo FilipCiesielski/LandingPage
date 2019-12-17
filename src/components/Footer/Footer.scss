@@ -1,6 +1,6 @@
 @import "../../sass/mixins";
 @import "../../sass/colors";
-
+@import "../../sass/responsiveVariable";
 
 .footer__wrap {
   width: 100vw;
@@ -15,8 +15,6 @@
   font-family: 'mulibold', sans-serif;
 
 
-
-
   .footer__box {
     width: 80%;
     display: flex;
@@ -29,39 +27,41 @@
       align-items: center;
       flex-direction: column;
       margin-top: 4.5vw;
-span{
 
-}
+      span {
 
-
-.google__maps{
-display: flex;
-  justify-content: space-between;
-  align-items: center;
+      }
 
 
+      .google__maps {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-  >div {
-    a, button, span{
-      display: none;
-    }
-    >div {
-     margin-top: 3vw;
 
-      display: flex;
-      width: 11vw;
-      height: 11vw;
-      border-radius: 50%;
+        > div {
+          a, button, span {
+            display: none;
+          }
 
-      justify-content: center;
-      align-items: center;}
-div:nth-child(2){
-  height: 0;
+          > div {
+            margin-top: 3vw;
 
-    }
-  }
-}
+            display: flex;
+            width: 11rem;
+            height: 11rem;
+            border-radius: 50%;
 
+            justify-content: center;
+            align-items: center;
+          }
+
+          div:nth-child(2) {
+            height: 0;
+
+          }
+        }
+      }
 
 
     }
@@ -75,7 +75,7 @@ div:nth-child(2){
 
       li {
         list-style-type: none;
-        margin:1vw;
+        margin: 1vw;
 
         &:first-of-type {
           margin-bottom: 2vw;
@@ -85,18 +85,65 @@ div:nth-child(2){
           text-decoration: none;
           color: white;
           cursor: pointer;
-&:hover{
-  color:silver;
-}
+
+          &:hover {
+            color: silver;
+          }
         }
 
       }
     }
   }
-  .footer__author{
+
+  .footer__author {
     width: 80%;
     display: flex;
     justify-content: flex-end;
     margin-right: 1vw;
+  }
+}
+
+@media #{$mobile} {
+  .footer__wrap {
+    height: 100%;
+    padding-top: 1rem;
+
+    .footer__box {
+      //flex-direction: column;
+      .footer__box__localisation {
+        width: 100%;
+        align-items: center;
+        height: 100%;
+        justify-content: center;
+        margin-top: 0;
+        text-align: center;
+        font-size: 0.8rem;
+
+      }
+
+      .footer__box__columns {
+        flex-direction: column;
+        align-items: flex-end;
+
+        li {
+          display: none;
+
+          &:first-of-type {
+            margin-bottom: 2vw;
+            flex-direction: row;
+            display: flex;
+            font-size: 0.8rem;
+            justify-content: flex-end;
+          }
+        }
+      }
+    }
+
+    .footer__author {
+      margin-top: 1rem;
+      font-size: 0.3rem;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }

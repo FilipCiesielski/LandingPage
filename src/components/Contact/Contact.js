@@ -67,6 +67,9 @@ class Contact extends Component {
 
     handleChangeBox = () => {
         this.setState({checkBox: !this.state.checkBox});
+        {
+            this.state.checkBox ? this.setState({borderCheckBox: "1px solid red"}) : this.setState({borderCheckBox: "none"})
+        }
 
     };
 
@@ -85,7 +88,7 @@ class Contact extends Component {
 
         async function makePostRequest() {
             let url;
-            await fetch("emptyPHP.php", {
+            await fetch(url, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -136,6 +139,8 @@ class Contact extends Component {
                     <div className={"contact__box__form"}>
                         <span>Nie znalazłeś odpowiedniego kontaktu?</span>
                         <span>Skorzystaj z formularza.</span>
+                        {this.state.formSend &&
+                        <span style={{color: "#4D9EEA"}}>Twoja wiadomość zosłała wysłana.</span>}
                         <form onSubmit={this.handleOnSubmit}>
                             <div className={"form__inputs"}>
 
@@ -188,14 +193,12 @@ class Contact extends Component {
                                     niezbędnych do realizacji procesu rekrutacji zgodnie z Rozporządzeniem
                                     Parlamentu
                                     Europejskiego
-                                    i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób
+                                    w sprawie ochrony osób
                                     fizycznych w
                                     związku
                                     z
                                     przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych
-                                    oraz
-                                    uchylenia
-                                    dyrektywy 95/46/WE (RODO).</p>
+                                    (RODO).</p>
                             </div>
                             <input className={this.state.clickEffect} type={"submit"} value={"wyślij"}/>
                         </form>

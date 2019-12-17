@@ -1,62 +1,69 @@
-@mixin boxDisplaySettings{
+@mixin boxDisplaySettings {
   display: flex;
   justify-content: center;
-height: 80%;
+  height: 80%;
   width: 80%;
 
 }
-@mixin boxDisplaySettingsRWD{
+
+@mixin boxDisplaySettingsRWD {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 95%;
-  width:90%;
+  height: 100%;
+  width: 90%;
 
 }
 
-@mixin wrapSettings{
-  width: 100vw;
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@mixin wrapSettingRWD{
+@mixin wrapSettings {
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin wrapSettingRWD {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
-@mixin navBarBackgroundSettings{
-  \background: rgba(77,158,234,1);
-  background: -moz-linear-gradient(top, rgba(77,158,234,1) 0%, rgba(77,158,234,1) 39%, rgba(70,130,180,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(77,158,234,1)), color-stop(39%, rgba(77,158,234,1)), color-stop(100%, rgba(70,130,180,1)));
-  background: -webkit-linear-gradient(top, rgba(77,158,234,1) 0%, rgba(77,158,234,1) 39%, rgba(70,130,180,1) 100%);
-  background: -o-linear-gradient(top, rgba(77,158,234,1) 0%, rgba(77,158,234,1) 39%, rgba(70,130,180,1) 100%);
-  background: -ms-linear-gradient(top, rgba(77,158,234,1) 0%, rgba(77,158,234,1) 39%, rgba(70,130,180,1) 100%);
-  background: linear-gradient(to bottom, rgba(77,158,234,1) 0%, rgba(77,158,234,1) 39%, rgba(70,130,180,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d9eea', endColorstr='#4682b4', GradientType=0 );
+
+@mixin navBarBackgroundSettings {
+  \background: rgba(77, 158, 234, 1);
+  background: -moz-linear-gradient(top, rgba(77, 158, 234, 1) 0%, rgba(77, 158, 234, 1) 39%, rgba(70, 130, 180, 1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(77, 158, 234, 1)), color-stop(39%, rgba(77, 158, 234, 1)), color-stop(100%, rgba(70, 130, 180, 1)));
+  background: -webkit-linear-gradient(top, rgba(77, 158, 234, 1) 0%, rgba(77, 158, 234, 1) 39%, rgba(70, 130, 180, 1) 100%);
+  background: -o-linear-gradient(top, rgba(77, 158, 234, 1) 0%, rgba(77, 158, 234, 1) 39%, rgba(70, 130, 180, 1) 100%);
+  background: -ms-linear-gradient(top, rgba(77, 158, 234, 1) 0%, rgba(77, 158, 234, 1) 39%, rgba(70, 130, 180, 1) 100%);
+  background: linear-gradient(to bottom, rgba(77, 158, 234, 1) 0%, rgba(77, 158, 234, 1) 39%, rgba(70, 130, 180, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4d9eea', endColorstr='#4682b4', GradientType=0);
 
 }
-@mixin shadowDownSettings{
-  -webkit-box-shadow: 0px 14px 19px -18px rgba(0,0,0,0.54);
-  -moz-box-shadow: 0px 14px 19px -18px rgba(0,0,0,0.54);
-  box-shadow: 0px 14px 19px -18px rgba(0,0,0,0.54);
+
+@mixin shadowDownSettings {
+  -webkit-box-shadow: 0px 14px 19px -18px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 0px 14px 19px -18px rgba(0, 0, 0, 0.54);
+  box-shadow: 0px 14px 19px -18px rgba(0, 0, 0, 0.54);
 }
-@mixin imgShadowSettings{
-  -webkit-box-shadow: 3px 3px 20px 0px rgba(0,0,0,0.45);
-  -moz-box-shadow: 3px 3px 20px 0px rgba(0,0,0,0.45);
-  box-shadow: 3px 3px 20px 0px rgba(0,0,0,0.45);
+
+@mixin imgShadowSettings {
+  -webkit-box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.45);
+  box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.45);
 }
-@mixin newBackgroundColor{
-background-color:  #4D9EEA;
+
+@mixin newBackgroundColor {
+  background-color: #4D9EEA;
   -webkit-clip-path: polygon(15% 0, 30% 0, 0 30%, 0 15%);
   clip-path: polygon(12% 0, 25% 0, 0 25%, 0 12%);
 
 }
-@mixin inputHoverShadow{
+
+@mixin inputHoverShadow {
   -webkit-animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   @-webkit-keyframes shadow-drop-2-center {
@@ -89,12 +96,14 @@ background-color:  #4D9EEA;
   }
 
 }
-@mixin inputsShadow{
-  -webkit-box-shadow: 0px 0px 14px 2px rgba(0,0,0,0.04);
-  -moz-box-shadow: 0px 0px 14px 2px rgba(0,0,0,0.04);
-  box-shadow: 0px 0px 14px 2px rgba(0,0,0,0.04);
+
+@mixin inputsShadow {
+  -webkit-box-shadow: 0px 0px 14px 2px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 0px 0px 14px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0px 0px 14px 2px rgba(0, 0, 0, 0.04);
 }
-@mixin buttonPlayAnimation{
+
+@mixin buttonPlayAnimation {
   -webkit-animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
   animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
   /* ----------------------------------------------
@@ -131,7 +140,8 @@ background-color:  #4D9EEA;
   }
 
 }
-@mixin ovalButtonAnimation{
+
+@mixin ovalButtonAnimation {
   -webkit-animation: shadow-drop-2-top 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: shadow-drop-2-top 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   @-webkit-keyframes shadow-drop-2-top {
@@ -164,7 +174,8 @@ background-color:  #4D9EEA;
   }
 
 }
-@mixin sliderAnimation{
+
+@mixin sliderAnimation {
   @-webkit-keyframes slide-in-left {
     0% {
       -webkit-transform: translateX(-300px);
@@ -215,6 +226,36 @@ background-color:  #4D9EEA;
     100% {
       -webkit-transform: translateX(0);
       transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+}
+
+@mixin mobileMenuAnimation {
+  -webkit-animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  @-webkit-keyframes fade-in-fwd {
+    0% {
+      -webkit-transform: translateZ(-80px);
+      transform: translateZ(-80px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-fwd {
+    0% {
+      -webkit-transform: translateZ(-80px);
+      transform: translateZ(-80px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
       opacity: 1;
     }
   }

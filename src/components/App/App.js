@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './App.scss';
 
 import NavBar from "../NavBar/NavBar";
 import Header from "../Header/Header";
@@ -11,22 +10,22 @@ import Footer from "../Footer/Footer";
 
 
 class App extends Component {
-  render() {
-    return (
+    render() {
+        return (
 
-      <>
+            <>
 
-          <NavBar/>
-       <Header/>
-       <AboutForWho/>
-       <AboutForWhat/>
-       <AboutWithWho/>
-       <Contact/>
-       <Footer/>
+                <NavBar/>
+                <Header/>
+                <AboutForWho/>
+                <AboutForWhat/>
+                <AboutWithWho/>
+                <Contact/>
+                <Footer/>
 
-       </>
-    )
-  }
+            </>
+        )
+    }
 }
 
 

@@ -9,7 +9,8 @@ class Header extends Component {
         activeIndex: 0,
         slider: {}
 
-    }
+    };
+
     onNextClick = this.onNextClick.bind(this);
     onPrevClick = this.onPrevClick.bind(this);
 
@@ -89,10 +90,10 @@ class Header extends Component {
                 </div>
             </div>
         </>
-        let circle1
-        let circle2
-        let circle3
-        let circle4
+        let circle1;
+        let circle2;
+        let circle3;
+        let circle4;
         (this.state.activeIndex === 0) ? circle1 = "yellow" : circle1 = "white";
         (this.state.activeIndex === 1) ? circle2 = "yellow" : circle2 = "white";
         (this.state.activeIndex === 2) ? circle3 = "yellow" : circle3 = "white";
@@ -115,7 +116,7 @@ class Header extends Component {
                         </div>
                     </div>
                     <div className={"slider__box__right"}>
-                        <div className={"slider__box__left__circle"}>
+                        <div className={"slider__box__right__circle"}>
                             <FontAwesomeIcon color={circle1} className='fontAwesome' icon={faCircle}/>
                             <FontAwesomeIcon color={circle2} className='fontAwesome' icon={faCircle}/>
                             <FontAwesomeIcon color={circle3} className='fontAwesome' icon={faCircle}/>

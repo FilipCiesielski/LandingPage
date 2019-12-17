@@ -166,10 +166,10 @@
 
 }
 
-@media#{$mobile}{
+@media#{$mobile,$tablet}{
 
   .about3__wrap {
-   @include wrapSettingRWD;
+    @include wrapSettingRWD;
 
     .about3__box {
       @include boxDisplaySettingsRWD;
@@ -190,11 +190,14 @@
 
       .about3__box__media {
         width: 100%;
+        margin-bottom: 0.5rem;
+
         .about3__box__media__clip {
-height: 100%;
+          height: 100%;
+
           img {
-                   width: 100%;
-            height: 100%;
+            width: 100%;
+            height: 20rem;
           }
         }
       }

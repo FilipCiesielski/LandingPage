@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import "./AboutWithWho.scss"
-import {Waypoint} from 'react-waypoint';
 
 
 class AboutWithWho extends Component {
@@ -21,7 +20,6 @@ class AboutWithWho extends Component {
         }
 
     };
-
 
 
     render() {
