@@ -16,8 +16,8 @@ class Footer extends Component {
                 }}/>}
             </GoogleMap>
         ));
-        const myGoogleApiKey = "AIzaSyD6UHgXkEQ7OCCxVPWs7AQghxucXnfVoGk";
-        const googleURL = `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${myGoogleApiKey}`;
+
+        let googleURL = `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key`;
         return (
 
             <div className={"footer__wrap"}>
