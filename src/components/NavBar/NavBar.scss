@@ -8,6 +8,8 @@
   justify-content: center;
   position: fixed;
   z-index: 4;
+  background-color: $blueColor;
+
 @include navBarBackgroundSettings;
   @include shadowDownSettings;
 
@@ -21,10 +23,12 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
 img{
   width: 15%;
   height: 15%;
   margin-left: 2.5vw;
+  margin-top: 1vw;
 
 }
 
@@ -36,6 +40,7 @@ img{
   justify-content: space-between;
   list-style-type: none;
   padding-right: 1vw;
+  margin-top: 1vw;
 
    a {
 
@@ -43,13 +48,13 @@ img{
     color:white;
     font-family: 'mulibold', sans-serif;
 &:hover{
-color: silver;
+color: #c9c9c9;
 }
      &:after {
        margin-top: 5px;
        display:block;
        content: '';
-       border-bottom:1px solid silver;
+       border-bottom:1px solid white;
        transform: scaleX(0);
        transition: transform 0.4s ease-in-out;
 

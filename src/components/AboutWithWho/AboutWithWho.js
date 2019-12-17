@@ -32,7 +32,7 @@ class AboutWithWho extends Component {
                     <div onClick={this.handleOnClick} className={"close"}>close</div>
                     <div className={"popup__content"}>
 
-                        {this.state.movieOn && <iframe id="ytplayer" type="text/html" width="854" height="480"
+                        {this.state.movieOn && <iframe id="ytplayer" type="text/html" width="90%" height="50%"
                                                        src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
                                                        frameBorder="0"></iframe>}
                     </div>
@@ -53,7 +53,6 @@ class AboutWithWho extends Component {
                             morbi tristique in, ipsum.</p>
                     </div>
                     <div className={"about3__box__media"}>
-
                         <div className={"about3__box__media__clip"}>
                             <span onClick={this.handleOnClick}></span>
                             <img alt="globe in hand"

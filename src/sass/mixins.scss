@@ -1,24 +1,33 @@
 @mixin boxDisplaySettings{
   display: flex;
   justify-content: center;
-
+height: 80%;
   width: 80%;
+
+}
+@mixin boxDisplaySettingsRWD{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 95%;
+  width:90%;
 
 }
 
 @mixin wrapSettings{
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 @mixin wrapSettingRWD{
   width: 100vw;
-  height: 60vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 @mixin navBarBackgroundSettings{
   \background: rgba(77,158,234,1);
@@ -151,6 +160,62 @@ background-color:  #4D9EEA;
       transform: translateZ(50px) translateY(12px);
       -webkit-box-shadow: 0 -12px 20px -12px rgba(0, 0, 0, 0.35);
       box-shadow: 0 -12px 20px -12px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+}
+@mixin sliderAnimation{
+  @-webkit-keyframes slide-in-left {
+    0% {
+      -webkit-transform: translateX(-300px);
+      transform: translateX(-300px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-left {
+    0% {
+      -webkit-transform: translateX(-300px);
+      transform: translateX(-300px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+
+  }
+
+  @-webkit-keyframes slide-in-right {
+    0% {
+      -webkit-transform: translateX(500px);
+      transform: translateX(500px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      -webkit-transform: translateX(500px);
+      transform: translateX(500px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 

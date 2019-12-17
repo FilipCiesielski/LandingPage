@@ -85,7 +85,9 @@ div:nth-child(2){
           text-decoration: none;
           color: white;
           cursor: pointer;
-
+&:hover{
+  color:silver;
+}
         }
 
       }

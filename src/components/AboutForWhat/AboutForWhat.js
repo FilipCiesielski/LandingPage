@@ -6,13 +6,13 @@ import "./AboutForWhat.scss"
 class AboutForWhat extends Component {
     render() {
         return (
-            <div className={"about1__wrap"}>
-                <section className={"about1__box"}>
-                    <div className={"about1__box__media"}>
-                        <div className={"about1__box__media--photo"}><span>Nowość</span><img src={"https://image.freepik.com/free-photo/handshake-close-up-executives_1098-1384.jpg"} ></img>
+            <div className={"about2__wrap"}>
+                <section className={"about2__box"}>
+                    <div className={"about2__box__media"}>
+                        <div className={"about2__box__media--photo"}><span>Nowość</span><img src={"https://image.freepik.com/free-photo/handshake-close-up-executives_1098-1384.jpg"} ></img>
                         </div>
                     </div>
-                    <div className={"about1__box__article"}>
+                    <div className={"about2__box__article"}>
                         <h1>Po co?</h1>
                         <p>Lorem ipsum dolor sit amet quam. Phasellus in augue turpis, accumsan tincidunt.
                             Pellentesque habitant morbi tristique in, ipsum. Fusce suscipit sed, dui. In neque

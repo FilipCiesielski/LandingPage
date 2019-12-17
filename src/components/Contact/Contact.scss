@@ -1,5 +1,6 @@
 @import "../../sass/mixins";
 @import "../../sass/colors";
+@import "../../sass/responsiveVariable";
 
 .contact__wrap {
   @include wrapSettings;
@@ -13,20 +14,20 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 45%;
+      width: 48%;
 
 
       span {
         font-family: 'Muli', sans-serif;
         font-weight: lighter;
-        font-size: 1vw;
+        font-size: 0.9rem;
         color: black;
-        margin-bottom: 1.2vw;
+        margin-bottom: 1.5vw;
 
         &:nth-of-type(2) {
-          font-size: 1vw;
+          font-size: 0.8rem;
           color: $darkGrey;
-          margin-bottom: 2vw;
+          margin-bottom: 3vw;
         }
       }
 
@@ -44,8 +45,8 @@
 
           .floating-label {
             position: relative;
-            margin-bottom: 1.2vw;
-              font-family: 'mulilight', sans-serif;
+            margin-bottom: 1rem;
+            font-family: 'mulilight', sans-serif;
             font-weight: lighter;
             background-color: white;
             @include inputsShadow;
@@ -59,32 +60,33 @@
           }
 
           .floating-input {
-            font-size: 0.9vw;
+            font-size: 1rem;
             padding: 4px 4px;
             display: block;
             width: 100%;
-            height: 1.7vw;
+            height: 1.7rem;
             background-color: white;
             border: none;
-            margin-bottom: 0.5vw;
+            margin-bottom: 0.5rem;
             font-family: 'mulilight', sans-serif;
             cursor: pointer;
           }
+
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
           input:-webkit-autofill:focus,
-          input:-webkit-autofill:active  {
+          input:-webkit-autofill:active {
             -webkit-box-shadow: 0 0 0 30px white inset !important;
           }
 
-          .floating-input:focus{
+          .floating-input:focus {
             outline: none;
 
           }
 
           label {
             color: $darkGrey;
-            font-size: 0.9vw;
+            font-size: 0.9rem;
             font-weight: normal;
             position: absolute;
             pointer-events: none;
@@ -97,10 +99,9 @@
 
           .floating-input:focus ~ label, .floating-input:not(:placeholder-shown) ~ label {
             top: -1vw;
-            font-size: 0.625vw;
+            font-size: 0.7rem;
             color: $darkGrey;
           }
-
 
 
           .floating-input:focus ~ .bar:before, .floating-input:focus ~ .bar:after, .floating-select:focus ~ .bar:before, .floating-select:focus ~ .bar:after {
@@ -111,17 +112,16 @@
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
-            padding-top: 1.2vw;
-            padding-left: 0.5vw;
+            padding-top: 1rem;
+
           }
 
           .floating-textarea {
-            min-height: 30px;
-            max-height: 260px;
+            min-height: 3rem;
+            max-height: 20rem;
             overflow: hidden;
             overflow-x: hidden;
           }
-
 
 
           &:nth-of-type(1) {
@@ -150,35 +150,35 @@
           align-items: flex-start;
           font-family: 'Muli', sans-serif;
           font-weight: lighter;
-          font-size: 0.5vw;
+          font-size: 0.5rem;
 
           p {
             padding-right: 1vw;
           }
 
           .custom__checkbox {
-            width: 6vw;
+            width: 6rem;
             display: flex;
             position: relative;
             margin-right: 0.5vw;
 
             label {
-              width: 1.4vw;
-              height: 1.4vw;
+              width: 1.5rem;
+              height: 1.5rem;
               cursor: pointer;
               position: absolute;
               top: 0;
               left: 0;
               background: #fcfff4;
-                      @include inputsShadow;
+              @include inputsShadow;
 
               &:after {
                 content: '';
-                width: 0.8vw;
-                height: 0.4vw;
+                width: 0.9rem;
+                height: 0.5rem;
                 position: absolute;
-                top: 0.3vw;
-                left: 0.25vw;
+                top: 0.3rem;
+                left: 0.25rem;
                 border: 0.25vw solid $blueColor;
                 border-top: none;
                 border-right: none;
@@ -211,24 +211,95 @@
           outline: none;
           box-shadow: none;
           border: none;
-          width: 6.5vw;
-          height: 2.8vw;
-          border-radius: 2vw;
+          width: 6.5rem;
+          height: 2.5rem;
+          border-radius: 2rem;
           text-transform: uppercase;
           font-family: 'Mulibold', sans-serif;
-          font-size: 1vw;
+          font-size: 0.9rem;
           color: white;
           background-color: $blueColor;
-          margin-top: 2.5vw;
+          margin-top: 2.5rem;
           cursor: pointer;
 
+          &:hover {
+            color: silver;
+          }
         }
-        .pressButton{
-          @include ovalButtonAnimation;
-        }
+
       }
     }
 
   }
 }
 
+@media #{$mobile}{
+  .contact__wrap {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .contact__box {
+      @include boxDisplaySettingsRWD;
+      align-items: center;
+
+      .contact__box__form {
+        width: 75%;
+        height: 100%;
+        text-align: center;
+
+        form {
+
+          div:nth-of-type(2) {
+
+
+            .floating-label {
+              width: 100%;
+              margin-bottom: 0.5rem;
+
+            }
+          }
+
+          div.form__inputs {
+            &:nth-of-type(1) {
+              flex-direction: column;
+
+              &:last-child {
+                height: 3.1rem;
+                width: 100%;
+                margin-bottom: 0.5rem;
+              }
+
+              .floating-label {
+                width: 100%;
+                height: 3.1rem;
+                margin-bottom: 0.5rem;
+
+                &:first-child {
+                  margin-bottom: 0.5rem;
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+  .contact__box__checkBox {
+    margin-top: 2rem;
+
+    text-align: justify;
+
+    p {
+      font-size: 0.2rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+}

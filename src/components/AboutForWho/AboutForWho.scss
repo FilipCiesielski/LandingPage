@@ -1,25 +1,24 @@
 @import "../../sass/mixins";
 @import "../../sass/colors";
+@import "../../sass/responsiveVariable";
 
-
-.about2__wrap {
+.about1__wrap {
   @include wrapSettings;
 
-  .about2__box {
+  .about1__box {
     @include boxDisplaySettings;
 
 
-    .about2__box__article {
+    .about1__box__article {
       width: 100%;
       display: flex;
       flex-direction: column;
-      border: 1px solid red;
-      padding-left: 2.5vw;
+          padding-left: 2.5vw;
       padding-right: 1.5vw;
 
       h1 {
         font-family: 'muliextrabold', sans-serif;
-        font-size: 2.1vw;
+        font-size: 2.2vw;
         margin-bottom: 3vw;
       }
 
@@ -50,14 +49,13 @@ a{
 
       }
     }
-    .about2__box__media {
+    .about1__box__media {
       height: 100%;
       width: 90%;
       display: flex;
       justify-content: center;
-      border: 1px solid green;
 
-      .about2__box__media--image,{
+      .about1__box__media--image,{
         width: 82%;
         height: 32.25vw;
       }
@@ -74,4 +72,37 @@ a{
 
     }
   }
+}
+@media #{$mobile}{
+  .about1__wrap{
+    @include wrapSettingRWD
+    .about1__box{
+@include boxDisplaySettingsRWD
+      .about1__box__article{
+
+        h1{
+          font-size: 1rem;
+          margin-top: 0.5rem;
+          text-align: center;
+        }
+        p{
+          font-size: 0.7rem;
+          line-height: 1rem;
+        }
+      }
+      .about1__box__media{
+        width: 100%;
+        .about1__box__media--image{
+          height: 100%;
+img{
+  margin-top: 1rem;
+  width: 100%;
+  height: 100%;
+}
+      }
+    }
+  }}
+
+
+
 }

@@ -1,32 +1,30 @@
 import React, {Component} from 'react';
 import './Contact.scss';
-var request = require('ajax-request');
 
 class Contact extends Component {
 
 
-        state = {
-            name: "",
-            surname: "",
-            email: "",
-            message: "",
+    state = {
+        name: "",
+        surname: "",
+        email: "",
+        message: "",
 
-            colorName: "black",
-            colorSurname: "black",
-            colorEmail: "black",
-            colorMessage: "black",
+        colorName: "black",
+        colorSurname: "black",
+        colorEmail: "black",
+        colorMessage: "black",
 
-            borderName: "none",
-            borderSurname: "none",
-            borderEmail: "none",
-            borderMessage: "none",
+        borderName: "none",
+        borderSurname: "none",
+        borderEmail: "none",
+        borderMessage: "none",
 
-            checkBox: false,
-            errCheckBox: false,
-            formSend:false,
-clickEffect:"null"
-        };
-
+        checkBox: false,
+        errCheckBox: false,
+        formSend: false,
+        clickEffect: "null"
+    };
 
 
     handleOnChange = e => {
@@ -45,28 +43,27 @@ clickEffect:"null"
         if (inputName === "name" && name === "" && name.length < 2) {
             this.setState({borderName: "1px solid red", colorName: "red"});
 
-        } else if(inputName==="name") {
+        } else if (inputName === "name") {
             this.setState({borderName: "none", colorName: "black"})
         }
         if (inputName === "surname" && surname === "" && surname.length < 2) {
             this.setState({borderSurname: "1px solid red", colorSurname: "red"})
-        }  else if(inputName==="surname"){
+        } else if (inputName === "surname") {
             this.setState({borderSurname: "none", colorSurname: "black"})
         }
         if (inputName === "email" && !mailReg.test(mail)) {
             this.setState({borderEmail: "1px solid red", colorEmail: "red"})
 
-        }  else if(inputName==="email") {
+        } else if (inputName === "email") {
             this.setState({borderEmail: "none", colorEmail: "black"});
         }
         if (inputName === "message" && message === "" && message.length < 1) {
             this.setState({borderMessage: "1px solid red", colorMessage: "red"})
-        }  else if(inputName==="message") {
+        } else if (inputName === "message") {
             this.setState({borderMessage: "none", colorMessage: "black"})
         }
 
     };
-
 
     handleChangeBox = () => {
         this.setState({checkBox: !this.state.checkBox});
@@ -75,9 +72,8 @@ clickEffect:"null"
 
     handleOnSubmit = e => {
 
-        this.setState({clickEffect: "pressButton"})
+        this.setState({clickEffect: "pressButton"});
         this.setState({formSend: false});
-        console.log(this.state.checkBox)
         this.validationForm();
 
         let {name, surname, email, checkBox, message,} = this.state;
@@ -85,39 +81,26 @@ clickEffect:"null"
         const mailReg = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{1,3}$/i;
 
         e.preventDefault();
-        const axios = require('axios');
+
 
         async function makePostRequest() {
+            let url;
+            await fetch("emptyPHP.php", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: {
+                    name: name,
+                    surname: surname,
+                    email: email,
+                    message: message
+                }
 
-            let res = await axios.post('https://jsonplaceholder.typicode.com/posts');
+            }).then(response => console.log(response))
+                .catch(error => console.log(error));
 
-            console.log(`Status code: ${res.status}`);
-            console.log(`Status text: ${res.statusText}`);
-            console.log(`Request method: ${res.request.method}`);
-            console.log(`Path: ${res.request.path}`);
-
-            console.log(`Date: ${res.headers.date}`);
-            console.log(`Data: ${res.data}`);
         }
-
-        var values = this.serialize();
-
-       request.post({
-            url: "test.php",
-            type: "post",
-            data: values ,
-            success: function (response) {
-
-                // You will get response from your PHP page (what you echo or print)
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.log(textStatus, errorThrown);
-            }
-        });
-
-
-
-
 
         if (name !== "" && name.length > 2 && name.length < 50 && surname !== "" && surname.length > 2 && surname.length < 50 && mailReg.test(mail) && message.length > 0 && checkBox) {
             this.setState({formSend: true});
@@ -143,8 +126,8 @@ clickEffect:"null"
             this.setState({borderMessage: "1px solid red", colorMessage: "red"})
         }
 
+    };
 
-    }
     render() {
         return (
             <div className={"contact__wrap"}>
@@ -198,7 +181,6 @@ clickEffect:"null"
                                 <div className="custom__checkbox">
                                     <input type="checkbox" name="check" value="None" id="custom__checkbox"
                                            onChange={this.handleChangeBox}/>
-
                                     <label htmlFor="custom__checkbox"></label>
                                 </div>
                                 <p>Wyrażam zgodę na przetwarzanie moich danych osobowych dla
