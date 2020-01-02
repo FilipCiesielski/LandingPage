@@ -46,8 +46,7 @@
       display: flex;
       justify-content: space-between;
       list-style-type: none;
-      //padding-right: 1vw;
-      margin-top: 1vw;
+        margin-top: 1vw;
 
       a {
 
@@ -83,7 +82,7 @@
 
 @media #{$mobile,$tablet} {
   .navBar__wrap {
-    width: 100%;
+    width: 100vw;
     height: 3rem;
     display: flex;
 
@@ -101,7 +100,7 @@
         color: white;
 
         &:hover {
-
+        color:$darkGrey;
         }
 
       }
@@ -112,7 +111,7 @@
       width: 100%;
       height: 10rem;
       margin-top: 3rem;
-  background-color: $blueColor;
+  background-color: $darkGrey;
       @include shadowDownSettings;
       @include mobileMenuAnimation;
 
